@@ -51,7 +51,7 @@ Shader "Unity Shaders Book/Chapter 6/URP/Specular/Specular Vertex-Level"
                 float3 diffuse = light.color.rgb * _Diffuse.rgb * saturate(dot(worldNormal, worldLightDir));
                 float3 reflectDir = normalize(reflect(-worldLightDir, worldNormal)); //这里注意是反射的入射光线方向
                 float3 viewDir = normalize(_WorldSpaceCameraPos - TransformObjectToWorld(IN.positionOS.xyz));
-                float3 specular = light.color.rgb * _Specular.rgb * pow(saturate(dot(reflectDir, viewDir)), _Gloss);//I=LightColor∗pow(max(0,R⋅V),α)   R=2(N⋅L)N−L
+                float3 specular = light.color.rgb * _Specular.rgb * pow(max(0, dot(reflectDir, viewDir)), _Gloss);//I=LightColor∗pow(max(0,R⋅V),α)   R=2(N⋅L)N−L
                 OUT.color = ambient + specular + diffuse;
 
                 return OUT;

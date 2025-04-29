@@ -43,7 +43,7 @@ Shader "Unity Shaders Book/Chapter 6/URP/Diffuse/Diffuse Vertex-Level"
                 float3 positionWS = TransformObjectToWorld(IN.positionOS.xyz).xyz;
                 Light mainLight = GetMainLight();
                 float3 lightDirWS = normalize(mainLight.direction);
-                float NdotL = saturate(dot(normalWS, lightDirWS));
+                float NdotL = max(0, dot(normalWS, lightDirWS));
                 float3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz;
                 float3 diffuse = mainLight.color.rgb * _Diffuse.rgb * NdotL; //I=LightColor∗max(0,N⋅L)
                 OUT.color = ambient + diffuse;

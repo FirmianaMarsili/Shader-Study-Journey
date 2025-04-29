@@ -4,7 +4,7 @@ Shader "Unity Shaders Book/Chapter 6/URP/Specular/Specular Pixel-Level"
     {
         _Diffuse ("Diffuse", Color) = (1, 1, 1, 1)
         _Specular ("Specular", Color) = (1, 1, 1, 1)
-        _Gross ("Gross", Range(8.0, 256)) = 20
+        _Gloss ("Gloss", Range(8.0, 256)) = 20
     }
 
     SubShader
@@ -26,7 +26,7 @@ Shader "Unity Shaders Book/Chapter 6/URP/Specular/Specular Pixel-Level"
             CBUFFER_START(UnityPerMaterial)
                 float4 _Diffuse;
                 float4 _Specular;
-                float _Gross;
+                float _Gloss;
             CBUFFER_END
             struct Attributes
             {
@@ -60,7 +60,7 @@ Shader "Unity Shaders Book/Chapter 6/URP/Specular/Specular Pixel-Level"
                 float3 diffuse = light.color.rgb * _Diffuse.rgb * saturate(dot(worldLightDir, worldNormal));
                 float3 relectDir = normalize(reflect(-worldLightDir, worldNormal)); //这里注意是反射的入射光线方向
                 float3 viewDir = normalize(_WorldSpaceCameraPos.xyz - IN.positionWS.xyz);
-                float3 specular = light.color.rgb * _Specular.rgb * pow(saturate(dot(relectDir, viewDir)), _Gross);//I=LightColor∗pow(max(0,R⋅V),α)   R=2(N⋅L)N−L
+                float3 specular = light.color.rgb * _Specular.rgb * pow(max(0, dot(relectDir, viewDir)), _Gloss);//I=LightColor∗pow(max(0,R⋅V),α)   R=2(N⋅L)N−L
                 return half4(specular + ambient + diffuse, 1);
             }
 

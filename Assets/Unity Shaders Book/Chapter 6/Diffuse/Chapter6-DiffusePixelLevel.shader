@@ -53,7 +53,7 @@ Shader "Unity Shader Book/Chapter 6/URP/Diffuse/Diffuse Pixel-Level"
                 Light light = GetMainLight();
                 float3 worldLightDir = normalize(light.direction);
                 
-                float3 diffuse = light.color.rgb * _Diffuse.rgb * saturate(dot(IN.normal, worldLightDir)); //I=LightColor∗max(0,N⋅L)
+                float3 diffuse = light.color.rgb * _Diffuse.rgb * max(0, dot(IN.normal, worldLightDir)); //I=LightColor∗max(0,N⋅L)
 
 
 

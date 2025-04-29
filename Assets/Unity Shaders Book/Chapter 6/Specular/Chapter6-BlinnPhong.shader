@@ -4,7 +4,7 @@ Shader "Unity Shaders Book/Chapter 6/URP/Specular/BlinnPhong"
     {
         _Diffuse ("Diffuse", Color) = (1, 1, 1, 1)
         _Specular ("Specular", Color) = (1, 1, 1, 1)
-        _Gross ("Gross", Range(8.0, 256)) = 20
+        _Gloss ("Gloss", Range(8.0, 256)) = 20
     }
     SubShader
     {
@@ -24,7 +24,7 @@ Shader "Unity Shaders Book/Chapter 6/URP/Specular/BlinnPhong"
             CBUFFER_START(UnityPerMaterial)
                 float4 _Diffuse;
                 float4 _Specular;
-                float _Gross;
+                float _Gloss;
             CBUFFER_END
 
             struct Attributes
@@ -61,7 +61,7 @@ Shader "Unity Shaders Book/Chapter 6/URP/Specular/BlinnPhong"
 
                 float3 viewDir = normalize(_WorldSpaceCameraPos.xyz - IN.positionWS);
                 float3 halfDir = normalize(viewDir + worldLightDir);
-                float3 specular = light.color.rgb * _Specular.rgb * pow(saturate(dot(IN.normal, halfDir)), _Gross); //I_specular = k_s * L_specular * max(0, N . H)^p      H = (L + V) / |L + V|
+                float3 specular = light.color.rgb * _Specular.rgb * pow(max(0, dot(IN.normal, halfDir)), _Gloss); //I_specular = k_s * L_specular * max(0, N . H)^p      H = (L + V) / |L + V|
                 return half4(ambient + diffuse + specular, 1.0);
             }
 
