@@ -1,5 +1,5 @@
 # Shader-Study-Journey
-目前主要是在学习Unity shader入门精要时，对相应的shader实现更改为urp实现。学习shader的同时，也顺便熟悉urp相关
+目前主要是在学习《Unity Shader入门精要》时，对相应的shader实现更改为urp实现。学习shader的同时，也顺便熟悉urp相关
 
 ---
 
