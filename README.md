@@ -15,7 +15,8 @@
 ![](Diagram/Chapter_6.png)
 
 ---
-### [章节7(单张纹理)](Assets/Unity%20Shaders%20Book/Chapter%207)
-1.  [单张纹理](Assets/Unity%20Shaders%20Book/Chapter%207/Chapter7-SingleTexture.shader)(图片出处[freepbr](https://freepbr.com/product/damp-block-wall-pbr/))
+### [章节7(单张纹理)](Assets/Unity%20Shaders%20Book/Chapter%207)(图片出处[freepbr](https://freepbr.com/product/damp-block-wall-pbr/))
+1.  [单张纹理](Assets/Unity%20Shaders%20Book/Chapter%207/Chapter7-SingleTexture.shader)
+2.  [法线纹理](Assets/Unity%20Shaders%20Book/Chapter%207/Chapter7-NormalMapTangentSpace.shader)
 
 ![](Diagram/Chapter_7.png)
