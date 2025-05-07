@@ -59,7 +59,7 @@ Shader "Unity Shaders Book/Chapter 6/URP/Specular/Specular Pixel-Level"
                 float3 worldLightDir = normalize(light.direction);
                 float3 diffuse = light.color.rgb * _Diffuse.rgb * saturate(dot(worldLightDir, worldNormal));
                 float3 relectDir = normalize(reflect(-worldLightDir, worldNormal)); //这里注意是反射的入射光线方向
-                float3 viewDir = normalize(_WorldSpaceCameraPos.xyz - IN.positionWS.xyz);
+                float3 viewDir = GetWorldSpaceNormalizeViewDir(IN.positionWS);
                 float3 specular = light.color.rgb * _Specular.rgb * pow(max(0, dot(relectDir, viewDir)), _Gloss);//I=LightColor∗pow(max(0,R⋅V),α)   R=2(N⋅L)N−L
                 return half4(specular + ambient + diffuse, 1);
             }

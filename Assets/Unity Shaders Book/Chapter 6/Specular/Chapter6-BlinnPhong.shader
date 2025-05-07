@@ -59,7 +59,7 @@ Shader "Unity Shaders Book/Chapter 6/URP/Specular/BlinnPhong"
                 float3 worldLightDir = normalize(light.direction);
                 float3 diffuse = light.color.rgb * _Diffuse.rgb * saturate(dot(IN.normal, worldLightDir));
 
-                float3 viewDir = normalize(_WorldSpaceCameraPos.xyz - IN.positionWS);
+                float3 viewDir = GetWorldSpaceNormalizeViewDir(IN.positionWS);
                 float3 halfDir = normalize(viewDir + worldLightDir);
                 float3 specular = light.color.rgb * _Specular.rgb * pow(max(0, dot(IN.normal, halfDir)), _Gloss); //I_specular = k_s * L_specular * max(0, N . H)^p      H = (L + V) / |L + V|
                 return half4(ambient + diffuse + specular, 1.0);
