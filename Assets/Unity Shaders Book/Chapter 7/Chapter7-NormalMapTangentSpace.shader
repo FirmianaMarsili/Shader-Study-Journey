@@ -88,7 +88,8 @@ Shader "Unity Shader Book/Chapter 7/URP/Texture/Normal Map In Tangent Space"
                 float4 normal = SAMPLE_TEXTURE2D(_BumpTex, sampler_BumpTex, IN.uv);
                 
                 float3 tangentNormal = UnpackNormalScale(normal, _BumpScale);
-                tangentNormal.z = sqrt(1.0 - saturate(dot(tangentNormal.xy, tangentNormal.xy)));
+                //x^2 + y^2 + z^2 = 1
+                //tangentNormal.z = sqrt(1.0 - saturate(dot(tangentNormal.xy, tangentNormal.xy)));
 
                 float3 albedo = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, IN.uv).rgb * _Color.rgb;
                 float3 ambient = UNITY_LIGHTMODEL_AMBIENT.rgb * albedo;
