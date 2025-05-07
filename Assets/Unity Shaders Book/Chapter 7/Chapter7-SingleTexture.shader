@@ -69,7 +69,7 @@ Shader "Unity Shader Book/Chapter 7/URP/Texture/Single Texture"
                 float3 worildLightDir = normalize(light.direction);
                 float3 diffuse = light.color.rgb * albedo * saturate(dot(IN.normal, worildLightDir));
                 float3 reflectDir = normalize(reflect(-worildLightDir, IN.normal));
-                float3 viewDir = normalize(_WorldSpaceCameraPos.xyz - IN.positionWS);
+                float3 viewDir = GetWorldSpaceNormalizeViewDir(IN.positionWS);
                 float3 specular = light.color.rgb * _Specular.rgb * pow(max(0, dot(reflectDir, viewDir)), _Gloss);
 
                 return half4(ambient + diffuse + specular, 1);
