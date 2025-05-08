@@ -44,7 +44,7 @@ Shader "Unity Shaders Book/Chapter 6/URP/Specular/Specular Vertex-Level"
                 OUT.positionHCS = TransformObjectToHClip(IN.positionOS.xyz);
                 float3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz;
 
-                float3 worldNormal = TransformObjectToWorldNormal(IN.normalOS);
+                float3 worldNormal = TransformObjectToWorldNormal(IN.normalOS, true);
                 Light light = GetMainLight();
 
                 float3 worldLightDir = normalize(light.direction);

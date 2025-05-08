@@ -41,7 +41,7 @@ Shader "Unity Shaders Book/Chapter 6/URP/Diffuse/HalfLambert"
                 Varyings OUT;
                 
                 OUT.positionHCS = TransformObjectToHClip(IN.positionOS.xyz);
-                OUT.normal = TransformObjectToWorldNormal(IN.normalOS);
+                OUT.normal = TransformObjectToWorldNormal(IN.normalOS, true);
 
 
 

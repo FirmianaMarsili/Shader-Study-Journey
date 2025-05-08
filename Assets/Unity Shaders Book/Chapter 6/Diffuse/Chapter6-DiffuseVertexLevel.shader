@@ -39,7 +39,7 @@ Shader "Unity Shaders Book/Chapter 6/URP/Diffuse/Diffuse Vertex-Level"
             Varyings vert(Attributes IN)
             {
                 Varyings OUT;
-                float3 normalWS = TransformObjectToWorldNormal(IN.normalOS);
+                float3 normalWS = TransformObjectToWorldNormal(IN.normalOS, true);
                 float3 positionWS = TransformObjectToWorld(IN.positionOS.xyz).xyz;
                 Light mainLight = GetMainLight();
                 float3 lightDirWS = normalize(mainLight.direction);

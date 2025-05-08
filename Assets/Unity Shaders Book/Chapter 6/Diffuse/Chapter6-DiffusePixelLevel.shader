@@ -40,7 +40,7 @@ Shader "Unity Shader Book/Chapter 6/URP/Diffuse/Diffuse Pixel-Level"
                 Varyings OUT;
 
                 OUT.positionHCS = TransformObjectToHClip(IN.positionOS.xyz);
-                OUT.normal = TransformObjectToWorldNormal(IN.normalOS);
+                OUT.normal = TransformObjectToWorldNormal(IN.normalOS, true);
 
 
                 return OUT;

@@ -53,7 +53,7 @@ Shader "Unity Shader Book/Chapter 7/URP/Texture/Single Texture"
                 Varyings OUT;
 
                 OUT.positionHCS = TransformObjectToHClip(IN.positionOS.xyz);
-                OUT.normal = TransformObjectToWorldNormal(IN.normal);
+                OUT.normal = TransformObjectToWorldNormal(IN.normal, true);
                 OUT.positionWS = TransformObjectToWorld(IN.positionOS.xyz);
                 OUT.uv = TRANSFORM_TEX(IN.uv, _MainTex);
 
