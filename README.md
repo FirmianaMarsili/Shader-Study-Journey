@@ -20,5 +20,6 @@
 2.  [切线空间-法线纹理](Assets/Unity%20Shaders%20Book/Chapter%207/Chapter7-NormalMapTangentSpace.shader)
 3.  [世界空间-法线纹理](Assets/Unity%20Shaders%20Book/Chapter%207/Chapter7-NormalMapWorldSpace.shader)
 4.  [渐变纹理](Assets/Unity%20Shaders%20Book/Chapter%207/Chapter7-RampTexture.shader)
+5.  [遮罩纹理](Assets/Unity%20Shaders%20Book/Chapter%207/Chapter7-MaskTexture.shader)
 
 ![](Diagram/Chapter_7.png)
