@@ -33,7 +33,7 @@ Shader "Unity Shaders Book/Chapter 6/URP/Specular/Specular Vertex-Level"
 
             struct Varyings
             {
-                float4 positionHCS : POSITION;
+                float4 positionHCS : SV_POSITION;
                 float3 color : COLOR;
             };
 

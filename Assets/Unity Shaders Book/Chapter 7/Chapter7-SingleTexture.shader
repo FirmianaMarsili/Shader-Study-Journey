@@ -42,7 +42,7 @@ Shader "Unity Shader Book/Chapter 7/URP/Texture/Single Texture"
 
             struct Varyings
             {
-                float4 positionHCS : POSITION;
+                float4 positionHCS : SV_POSITION;
                 float3 normal : NORMAL;
                 float3 positionWS : TEXCOORD0;
                 float2 uv : TEXCOORD1;

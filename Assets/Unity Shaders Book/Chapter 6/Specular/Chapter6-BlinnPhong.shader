@@ -35,7 +35,7 @@ Shader "Unity Shaders Book/Chapter 6/URP/Specular/BlinnPhong"
 
             struct Varyings
             {
-                float4 positionHCS : POSITION;
+                float4 positionHCS : SV_POSITION;
                 float3 normal : NORMAL;
                 float3 positionWS : TEXCOORD0;
             };

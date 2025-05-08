@@ -51,7 +51,7 @@ Shader "Unity Shader Book/Chapter 7/URP/Texture/Normal Map In World Space"
 
             struct Varyings
             {
-                float4 positionHCS : POSITION;
+                float4 positionHCS : SV_POSITION;
                 float2 uv : TEXCOORD0;
                 float3 normalWS : TEXCOORD1;
                 float3 tangentWS : TEXCOORD2;

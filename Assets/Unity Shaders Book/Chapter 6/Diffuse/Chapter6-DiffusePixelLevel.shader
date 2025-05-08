@@ -31,7 +31,7 @@ Shader "Unity Shader Book/Chapter 6/URP/Diffuse/Diffuse Pixel-Level"
 
             struct Varyings
             {
-                float4 positionHCS : POSITION;
+                float4 positionHCS : SV_POSITION;
                 float3 normal : NORMAL;
             };
 
