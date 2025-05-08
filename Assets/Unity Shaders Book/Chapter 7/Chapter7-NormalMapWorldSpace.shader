@@ -7,7 +7,7 @@ Shader "Unity Shader Book/Chapter 7/URP/Texture/Normal Map In World Space"
         [NoScaleOffset]_BumpTex ("BumpTex", 2D) = "bump" { }
         _BumpScale ("BumpScale", Float) = 1
         _Specular ("Specular", Color) = (1, 1, 1, 1)
-        _Gloss ("Gloss", Range(8, 255)) = 20
+        _Gloss ("Gloss", Range(8, 256)) = 20
     }
 
     SubShader
