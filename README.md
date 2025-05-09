@@ -31,4 +31,7 @@
 1.  [AlphaTest](Assets/Unity%20Shaders%20Book/Chapter%208/Chapter8-AlphaTest.shader)
 2.  [AlphaBlend (ZWrite Off SrcAlpha OneMinusSrcAlpha)](Assets/Unity%20Shaders%20Book/Chapter%208/Chapter8-AlphaBlend.shader)
 
+
+2.  [AlphaBlend (ZWrite On SrcAlpha OneMinusSrcAlpha)](Assets/Unity%20Shaders%20Book/Chapter%208/Chapter8-AlphaBlendZWrite.shader)
+
 ![](Diagram/Chapter_8.png)
