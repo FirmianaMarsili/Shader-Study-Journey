@@ -28,10 +28,10 @@
 ---
 
 ### [章节8(透明纹理)](Assets/Unity%20Shaders%20Book/Chapter%208)
-1.  [AlphaTest](Assets/Unity%20Shaders%20Book/Chapter%208/Chapter8-AlphaTest.shader)
-2.  [AlphaBlend (ZWrite Off SrcAlpha OneMinusSrcAlpha)](Assets/Unity%20Shaders%20Book/Chapter%208/Chapter8-AlphaBlend.shader)
-
-
-2.  [AlphaBlend (ZWrite On SrcAlpha OneMinusSrcAlpha)](Assets/Unity%20Shaders%20Book/Chapter%208/Chapter8-AlphaBlendZWrite.shader)
+1.  [Alpha Test](Assets/Unity%20Shaders%20Book/Chapter%208/Chapter8-AlphaTest.shader)
+2.  [Alpha Blend (ZWrite Off SrcAlpha OneMinusSrcAlpha)](Assets/Unity%20Shaders%20Book/Chapter%208/Chapter8-AlphaBlend.shader)
+3.  [Alpha Blend (ZWrite On SrcAlpha OneMinusSrcAlpha)](Assets/Unity%20Shaders%20Book/Chapter%208/Chapter8-AlphaBlendZWrite.shader)
+4.  [Alpha Test Both Sided](Assets/Unity%20Shaders%20Book/Chapter%208/Chapter8-AlphaTestBothSided.shader)
+5.  [Alpha Blend Both Sided(ZWrite Off SrcAlpha OneMinusSrcAlpha)](Assets/Unity%20Shaders%20Book/Chapter%208/Chapter8-AlphaBlendBothSided.shader)
 
 ![](Diagram/Chapter_8.png)
