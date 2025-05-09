@@ -44,8 +44,7 @@ Shader "Unity Shader Book/Chapter 8/URP/Alpha Test"
             {
                 float4 positionHCS : SV_POSITION;
                 float3 normalWS : NORMAL;
-                float3 positionWS : TEXCOORD0;
-                float2 uv : TEXCOORD1;
+                float2 uv : TEXCOORD0;
             };
             
 
@@ -53,7 +52,6 @@ Shader "Unity Shader Book/Chapter 8/URP/Alpha Test"
             {
                 Varyings OUT;
                 OUT.positionHCS = TransformObjectToHClip(IN.positionOS.xyz);
-                OUT.positionWS = TransformObjectToWorld(IN.positionOS.xyz);
                 OUT.normalWS = TransformObjectToWorldNormal(IN.normal, true);
                 OUT.uv = TRANSFORM_TEX(IN.uv, _MainTex);
                 return OUT;
