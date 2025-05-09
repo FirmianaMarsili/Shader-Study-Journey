@@ -29,6 +29,6 @@
 
 ### [章节8(透明纹理)](Assets/Unity%20Shaders%20Book/Chapter%208)
 1.  [AlphaTest](Assets/Unity%20Shaders%20Book/Chapter%208/Chapter8-AlphaTest.shader)
-2.  [AlphaBlend (SrcAlpha OneMinusSrcAlpha)](Assets/Unity%20Shaders%20Book/Chapter%208/Chapter8-AlphaBlend.shader)
+2.  [AlphaBlend (ZWrite Off SrcAlpha OneMinusSrcAlpha)](Assets/Unity%20Shaders%20Book/Chapter%208/Chapter8-AlphaBlend.shader)
 
 ![](Diagram/Chapter_8.png)
