@@ -40,5 +40,6 @@
 
 ### [章节9(多光源)](Assets/Unity%20Shaders%20Book/Chapter%209)
 1. [Multi Light](Assets/Unity%20Shaders%20Book/Chapter%209/Chapter9-ForwardRendering.shader)
+2. [Shadow](Assets/Unity%20Shaders%20Book/Chapter%209/Chapter9-Shadow.shader)
 
 ![](Diagram/Chapter_9.png)
