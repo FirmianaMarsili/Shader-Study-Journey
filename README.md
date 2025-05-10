@@ -35,3 +35,10 @@
 5.  [Alpha Blend Both Sided(ZWrite Off SrcAlpha OneMinusSrcAlpha)](Assets/Unity%20Shaders%20Book/Chapter%208/Chapter8-AlphaBlendBothSided.shader)
 
 ![](Diagram/Chapter_8.png)
+
+---
+
+### [章节9(多光源)](Assets/Unity%20Shaders%20Book/Chapter%209)
+1. [Multi Light](Assets/Unity%20Shaders%20Book/Chapter%209/Chapter9-ForwardRendering.shader)
+
+![](Diagram/Chapter_9.png)
