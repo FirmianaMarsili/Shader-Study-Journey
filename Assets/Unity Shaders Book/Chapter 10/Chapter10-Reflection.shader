@@ -56,7 +56,7 @@ Shader "Unity Shader Book/Chapter 10/URP/Reflection"
                 OUT.positionCS = TransformObjectToHClip(IN.positionOS.xyz);
                 OUT.normalWS = TransformViewToWorldNormal(IN.normalOS, true);
                 OUT.positionWS = TransformObjectToWorld(IN.positionOS.xyz);
-                OUT.viewDirWS = TransformWorldToViewDir(OUT.positionWS);
+                OUT.viewDirWS = GetWorldSpaceViewDir(OUT.positionWS);
                 OUT.reflectWS = normalize(reflect(-OUT.viewDirWS, OUT.viewDirWS));
                 
 
