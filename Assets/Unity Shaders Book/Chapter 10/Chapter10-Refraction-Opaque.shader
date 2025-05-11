@@ -7,7 +7,7 @@ Shader "Unity Shader Book/Chapter 10/URP/Refraction Opaque Texture"
     }
     SubShader
     {
-        Tags { "RenderType" = "Opaque" "Queue" = "Geometry" "RenderPipeline" = "UniversalRenderPipeline" }
+        Tags { "RenderType" = "Opaque" "Queue" = "Transparent" "RenderPipeline" = "UniversalRenderPipeline" }
 
         Pass
         {
