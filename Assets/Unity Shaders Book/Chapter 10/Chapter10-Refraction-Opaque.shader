@@ -1,9 +1,9 @@
-Shader "Unity Shader Book/Chapter 10/URP/Refraction"
+
+Shader "Unity Shader Book/Chapter 10/URP/Refraction Opaque Texture"
 {
     Properties
     {
         _RefractAmount ("Refract Amount", Range(0, 1)) = 1.0
-        _Cubemap ("Refraction Cubmap", Cube) = "_Skybox" { }
     }
     SubShader
     {
@@ -26,17 +26,16 @@ Shader "Unity Shader Book/Chapter 10/URP/Refraction"
             struct Varyings
             {
                 float4 positionHCS : SV_POSITION;
-                float3 normalWS : NORMAL;
+                float3 normalWS : TEXCOORD0;
                 float3 viewWS : TEXCOORD1;
             };
 
             CBUFFER_START(UnityPerMaterial)
                 float _RefractAmount;
             CBUFFER_END
-
-            TEXTURECUBE(_Cubemap);
-            SAMPLER(sampler_Cubemap);
             
+            TEXTURE2D(_CameraOpaqueTexture);
+            SAMPLER(sampler_CameraOpaqueTexture);
 
             Varyings vert(Attributes IN)
             {
@@ -51,10 +50,10 @@ Shader "Unity Shader Book/Chapter 10/URP/Refraction"
 
             half4 frag(Varyings IN) : SV_Target
             {
-                half2 screenUV = IN.positionHCS.xy / _ScreenParams.xy;
+                float2 screenUV = IN.positionHCS.xy / _ScreenParams.xy;
                 half ratio = (1 - pow(dot(IN.normalWS, IN.viewWS), 2.0)) * _RefractAmount;
                 float3 refractionOffset = _RefractAmount * TransformWorldToViewDir(IN.normalWS) * ratio;
-                half4 col = SAMPLE_TEXTURECUBE(_Cubemap, sampler_Cubemap, refractionOffset +float3(screenUV, 0));
+                half4 col = SAMPLE_TEXTURE2D(_CameraOpaqueTexture, sampler_CameraOpaqueTexture, screenUV + refractionOffset.xy);
                 
                 return col;
             }

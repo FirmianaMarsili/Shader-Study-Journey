@@ -46,7 +46,8 @@
 
 
 ### [章节10(高级纹理)](Assets/Unity%20Shaders%20Book/Chapter%2010)
-1. [Reflection(Cube)](Assets/Unity%20Shaders%20Book/Chapter%2010/Chapter10-Reflection.shader)
-2. [Refraction(Cube)](Assets/Unity%20Shaders%20Book/Chapter%2010/Chapter10-Refraction.shader)
+1. [Reflection](Assets/Unity%20Shaders%20Book/Chapter%2010/Chapter10-Reflection.shader)
+2. [Refraction(Opaque Texture)](Assets/Unity%20Shaders%20Book/Chapter%2010/Chapter10-Refraction-Opaque.shader)
+3. [Refraction(Cube)](Assets/Unity%20Shaders%20Book/Chapter%2010/Chapter10-Refraction.shader)
 
 ![](Diagram/Chapter_10.png)
