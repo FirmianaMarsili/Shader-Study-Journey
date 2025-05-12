@@ -52,3 +52,9 @@
 3. [Reflection(Fresnel)](Assets/Unity%20Shaders%20Book/Chapter%2010/Chapter10-Fresnel.shader)
 
 ![](Diagram/Chapter_10.png)
+
+
+### [章节11(纹理动画)](Assets/Unity%20Shaders%20Book/Chapter%2011)
+1. [Image Sequence Animation](Assets/Unity%20Shaders%20Book/Chapter%2010/Chapter11-ImageSequenceAnimation.shader)
+
+![](Diagram/Chapter_11.gif)
