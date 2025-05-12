@@ -59,11 +59,14 @@ Shader "Unity Shader Book/Chapter 10/URP/Reflection Fresnel"
 
             half4 frag(Varyings IN) : SV_Target
             {
-                float fresnel = pow(1.0 - saturate(dot(IN.normalWS, IN.viewDirWS)), _FresnelScale);
-                float4 color = _Color * fresnel;
-                float3 reflectVec = reflect(-IN.viewDirWS, IN.normalWS);
-                color.xyz *= DecodeHDREnvironment(SAMPLE_TEXTURECUBE(unity_SpecCube0, samplerunity_SpecCube0, reflectVec), unity_SpecCube0_HDR);
-                return color;
+                //Fo+(1-Fo)(1-v.n)
+                float fresnel = _FresnelScale + (1 - _FresnelScale) * pow(1.0 - saturate(dot(IN.normalWS, IN.viewDirWS)), 5);
+
+                Light light = GetMainLight();
+                float3 diffuse = light.color.rgb * _Color.rgb * saturate(dot(IN.normalWS, normalize(light.direction)));
+                float3 reflection = DecodeHDREnvironment(SAMPLE_TEXTURECUBE(unity_SpecCube0, samplerunity_SpecCube0, reflect(-IN.viewDirWS, IN.normalWS)), unity_SpecCube0_HDR);
+                float3 color = UNITY_LIGHTMODEL_AMBIENT.xyz + lerp(diffuse, reflection, saturate(fresnel));
+                return half4(color, 1);
             }
 
 
