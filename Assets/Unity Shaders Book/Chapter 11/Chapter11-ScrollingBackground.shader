@@ -2,10 +2,10 @@ Shader "Unity Shader Book/Chapter 11/URP/Scrolling Background"
 {
     Properties
     {
-        _MainTex ("Base Layer (RGB)", 2D) = "white" { }
-        _DetailTex ("2nd Layer (RGB)", 2D) = "white" { }
-        _ScrollX ("Base layer Scroll Speed", Float) = 1
-        _Scroll2X ("2nd layer Scroll Speed", Float) = 1
+        _MainTex ("Far (RGB)", 2D) = "white" { }
+        _DetailTex ("Near (RGB)", 2D) = "white" { }
+        _ScrollX ("Far Scroll Speed", Float) = 1
+        _Scroll2X ("Near Scroll Speed", Float) = 1
         _Multiplier ("Layer Multiplier", Float) = 1
     }
 
@@ -15,6 +15,9 @@ Shader "Unity Shader Book/Chapter 11/URP/Scrolling Background"
         pass
         {
             Name "ForwardLit"
+
+            ZWrite Off
+            Blend SrcAlpha OneMinusSrcAlpha
 
             HLSLPROGRAM
 
@@ -39,13 +42,37 @@ Shader "Unity Shader Book/Chapter 11/URP/Scrolling Background"
             {
                 float4 positionOS : POSITION;
                 float2 uv : TEXCOORD0;
+                float2 uv_detail : TEXCOORD1;
             };
 
             struct Varyings
             {
                 float4 positionHCS : SV_POSITION;
                 float2 uv : TEXCOORD0;
+                float2 uv_detail : TEXCOORD1;
             };
+
+            Varyings vert(Attributes IN)
+            {
+                Varyings OUT;
+
+                OUT.positionHCS = TransformObjectToHClip(IN.positionOS);
+                OUT.uv = TRANSFORM_TEX(IN.uv, _MainTex) + frac(float2(_ScrollX, 0) * _Time.y) ;
+                OUT.uv_detail = TRANSFORM_TEX(IN.uv_detail, _DetailTex) + frac(float2(_Scroll2X, 0) * _Time.y);
+
+                return OUT;
+            }
+
+            half4 frag(Varyings IN) : SV_Target
+            {
+                float4 first = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, IN.uv);
+                float4 second = SAMPLE_TEXTURE2D(_DetailTex, sampler_DetailTex, IN.uv_detail);
+                float4 color = lerp(first, second, second.a);
+                color.rgb *= _Multiplier;
+                return color;
+            }
+
+
 
             ENDHLSL
         }

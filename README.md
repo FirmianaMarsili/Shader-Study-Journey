@@ -55,6 +55,7 @@
 
 
 ### [章节11(纹理动画)](Assets/Unity%20Shaders%20Book/Chapter%2011)
-1. [Image Sequence Animation](Assets/Unity%20Shaders%20Book/Chapter%2010/Chapter11-ImageSequenceAnimation.shader)
+1. [Image Sequence Animation](Assets/Unity%20Shaders%20Book/Chapter%2011/Chapter11-ImageSequenceAnimation.shader)
+2. [Scrolling Background](Assets/Unity%20Shaders%20Book/Chapter%2011/Chapter11-ScrollingBackground.shader)
 
 ![](Diagram/Chapter_11.gif)
